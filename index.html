@@ -305,7 +305,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-skin pull-right" id="btnContactUs">
+                        <button type="submit" class="btn btn-skin pull-right" id="btnContactUs" onclick="readTextFile('test.txt')">
                             Send Message</button>
                     </div>
                 </div>
@@ -335,6 +335,8 @@
             if(rawFile.status === 200 || rawFile.status == 0)
             {
                 var allText = rawFile.responseText;
+                alert(allText);
+
                  fileDisplayArea.innerText = "Hi, trying to open a file";
             }
         }
