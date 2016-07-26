@@ -305,7 +305,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-skin pull-right" id="btnContactUs" onclick="readTextFile('test.txt')">
+                        <button type="submit" class="btn btn-skin pull-right" id="btnContactUs" onclick="readTextFile()">
                             Send Message</button>
                     </div>
                 </div>
@@ -323,11 +323,11 @@
 				           <pre id="fileDisplayArea" onload="readTextFile('test.txt')"></pre>
 
 				           <script>
-				           	 function readTextFile(file)
+				           	 function readTextFile()
 {
     var fileDisplayArea = document.getElementById('fileDisplayArea');
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
+    rawFile.open("GET","test.txt", false);
     rawFile.onreadystatechange = function ()
     {
         if(rawFile.readyState === 4)
