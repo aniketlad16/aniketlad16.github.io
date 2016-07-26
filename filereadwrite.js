@@ -9,8 +9,7 @@ window.onload = function readTextFile(file)
             if(rawFile.status === 200 || rawFile.status == 0)
             {
                 var allText = rawFile.responseText;
-                 fileDisplayArea.innerText = allText;
-                document.write("Hi trying to open a file");
+                 fileDisplayArea.innerText = "Hi, trying to open a file";
             }
         }
     }
