@@ -320,28 +320,15 @@
 
 				<h5>Home Address</h5>
 
-				           <pre id="fileDisplayArea" onload="readTextFile('test.txt')"></pre>
+				           <pre id="fileDisplayArea" onload="readTextFile()"></pre>
 
 				           <script>
 				           	 function readTextFile()
 {
-    var fileDisplayArea = document.getElementById('fileDisplayArea');
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET","test.txt", false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                alert(allText);
+   
+                alert("Hi trying to connect with file.");
 
-                 fileDisplayArea.innerText = "Hi, trying to open a file";
-            }
-        }
-    }
-    rawFile.send(null);
+          
 }
 				           </script>
 
