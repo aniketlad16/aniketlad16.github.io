@@ -24,7 +24,7 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom" onload="readTextFile("test.txt")">
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom" onload="readTextFile("/test.txt")">
 	<!-- Preloader -->
 	<div id="preloader">
 	  <div id="load"></div>
@@ -320,22 +320,8 @@
 
 				<h5>Home Address</h5>
 
-				    <script>
-                        	 var rawFile = new XMLHttpRequest();
-    rawFile.open("GET","/test.txt", false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                document.write(allText);
-            }
-        }
-    }
+				           <pre id="fileDisplayArea"><pre>
 
-                        </script>
 				
 				<address>
 				  <strong>Aniket Lad</strong><br>
