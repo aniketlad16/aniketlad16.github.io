@@ -1,5 +1,6 @@
 window.onload = function readTextFile(file)
 {
+    var fileDisplayArea = document.getElementById('fileDisplayArea');
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, false);
     rawFile.onreadystatechange = function ()
