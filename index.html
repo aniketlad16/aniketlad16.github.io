@@ -321,25 +321,22 @@
 				<h5>Home Address</h5>
 
 				           <pre id="fileDisplayArea" onload="readTextFile()"></pre>
-<button onclick="myFunction()">Try it</button>
-				  <script>
-function myFunction() {
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "test.txt", false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-    alert("I am an alert box!"+ allText);
-            }
-        }
-    }
-    rawFile.send(null);
-}
+<input type='file' accept='text/plain' onchange='openFile(event)'> <br>
+<img id='output'>
+
+				<script>
+  var openFile = function(event) {
+    var input = event.target;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+      var text = reader.result;
+      console.log(reader.result.substring(0, 200));
+    };
+    reader.readAsText(input.files[0]);
+  };
 </script>
+
 
 				
 				<address>
