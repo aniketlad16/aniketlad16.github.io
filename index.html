@@ -19,7 +19,7 @@
     <link href="css/style.css" rel="stylesheet">
 	<link href="color/default.css" rel="stylesheet">
 	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-	  <script type="text/javascript" src="filereadwrite.js"></script>
+	  
 
 
 </head>
@@ -121,6 +121,22 @@
                     <div class="inner">
 						<h5>Maura Daniels</h5>
                         <p class="subtitle">Ruby on Rails</p>
+                        <script>
+                        	 var rawFile = new XMLHttpRequest();
+    rawFile.open("GET","test.txt", false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                document.write(allText);
+            }
+        }
+    }
+
+                        </script>
                         <div class="avatar"><img src="img/team/2.jpg" alt="" class="img-responsive img-circle" /></div>
 
                     </div>
