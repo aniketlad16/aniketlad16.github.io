@@ -29,7 +29,7 @@ function loadDoc() {
   if (xhttp.readyState == 4 && xhttp.status == 200) {
     xmlDoc = xhttp.responseXML;
     txt = "";
-    x = xmlDoc.getElementsByTagName("EMAIL");
+    x = xmlDoc.getElementsByTagName("NAME");
     for (i = 0; i < x.length; i++) {
       txt = txt + x[i].childNodes[0].nodeValue + "<br>";
     }
