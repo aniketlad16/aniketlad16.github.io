@@ -21,8 +21,11 @@
 	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 <script>
 window.onload = function readTextFile(){
-    
-      alert("Hi");
+       var rawFile = new XMLHttpRequest();
+    	rawFile.open("GET","test.txt", false);
+    	var allText = rawFile.responseText;
+
+      alert("Hi: "+ allText);
 };
 </script>
 
