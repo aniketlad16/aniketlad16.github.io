@@ -20,24 +20,16 @@
 	<link href="color/default.css" rel="stylesheet">
 	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 <script>
-  var openFile = function(event) {
-    var input = event.target;
-
-    var reader = new FileReader();
-    reader.onload = function(){
-      var text = reader.result;
+window.onload = function readTextFile(){
+    
       alert("Hi");
-          alert(reader.result.substring(0, 200));
-      console.log(reader.result.substring(0, 200));
-    };
-    reader.readAsText(input.files[0]);
-  };
+};
 </script>
 
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom" onload='openFile(event)'>
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom" onload='readTextFile()'>
 	<!-- Preloader -->
 	<div id="preloader">
 	  <div id="load"></div>
