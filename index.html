@@ -19,12 +19,25 @@
     <link href="css/style.css" rel="stylesheet">
 	<link href="color/default.css" rel="stylesheet">
 	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+<script>
+  var openFile = function(event) {
+    var input = event.target;
 
+    var reader = new FileReader();
+    reader.onload = function(){
+      var text = reader.result;
+      alert("Hi");
+          alert(reader.result.substring(0, 200));
+      console.log(reader.result.substring(0, 200));
+    };
+    reader.readAsText(input.files[0]);
+  };
+</script>
 
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom" onload='openFile(event)'>
 	<!-- Preloader -->
 	<div id="preloader">
 	  <div id="load"></div>
@@ -320,22 +333,9 @@
 
 				<h5>Home Address</h5>
 
-				           <pre id="fileDisplayArea" onload="readTextFile()"></pre>
-<input type='file' accept='text/plain' onchange='openFile(event)'><br>
-<text id='output'>
+				        
 
-				<script>
-  var openFile = function(event) {
-    var input = event.target;
-
-    var reader = new FileReader();
-    reader.onload = function(){
-      var text = reader.result;
-      console.log(reader.result.substring(0, 200));
-    };
-    reader.readAsText(input.files[0]);
-  };
-</script>
+				
 
 
 				
