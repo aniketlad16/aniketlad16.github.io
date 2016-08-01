@@ -20,6 +20,47 @@
 	<link href="color/default.css" rel="stylesheet">
 	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 
+<script>
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        myFunction(xhttp);
+    }
+};
+xhttp.open("GET", "test.xml", true);
+xhttp.send();
+
+function myFunction(xml) {
+    var x, y, z, i, xLen, yLen, newEle, newEle2, newText, newText2, xmlDoc, txt;
+    xmlDoc = xml.responseXML;
+    txt = "";
+    x = xmlDoc.getElementsByTagName("testinfo");
+    xLen = x.length;
+    for (i = 0; i < xLen; i++) {
+        newEle = xmlDoc.createElement("NAME");
+        newText = xmlDoc.createTextNode("first");
+        newEle2 = xmlDoc.createElement("EMAIL");
+        newText2 = xmlDoc.createTextNode("Second");
+
+        newEle.appendChild(newText);
+        newEle2.appendChild(newText2);
+
+        x[i].appendChild(newEle);
+        x[i].appendChild(newEle2);
+
+    }
+    // Output all titles and editions
+    y = xmlDoc.getElementsByTagName("NAME");
+    yLen = y.length
+    z = xmlDoc.getElementsByTagName("EMAIL");
+    for (i = 0; i < yLen; i++) {
+        txt += y[i].childNodes[0].nodeValue +
+        " - EMAIL: " +
+        z[i].childNodes[0].nodeValue + "<br>";
+    }
+    document.getElementById("myTextarea").innerHTML = txt;
+}
+</script>
 
 <script>
 function loadDoc() {
@@ -237,7 +278,7 @@ function loadDoc() {
 					</div>
 					<div class="service-desc">
 						<h5>Photography</h5>
-						<p> enim in pharetra malesuada. semper magna metus electram accommodare.</p>
+						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
 					</div>
                 </div>
 				</div>
