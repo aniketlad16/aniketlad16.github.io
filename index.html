@@ -21,6 +21,7 @@
 	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 
 <script>
+function loadDoc2() {
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -29,7 +30,7 @@ xhttp.onreadystatechange = function() {
 };
 xhttp.open("GET", "test.xml", true);
 xhttp.send();
-
+}
 function myFunction(xml) {
     var x, y, z, i, xLen, yLen, newEle, newEle2, newText, newText2, xmlDoc, txt;
     xmlDoc = xml.responseXML;
@@ -88,7 +89,7 @@ function loadDoc() {
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom" onload='loadDoc()'>
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom" onload='loadDoc2()'>
 	<!-- Preloader -->
 	<div id="preloader">
 	  <div id="load"></div>
